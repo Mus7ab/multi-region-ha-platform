@@ -11,7 +11,7 @@ terraform {
   backend "s3" {
     bucket       = "three-tier-webapp-tfstate-342677169816"
     key          = "three-tier-webapp-dr/terraform.tfstate"
-    region       = "ap-south-1"
+    region       = "ap-south-2"
     use_lockfile = true
     encrypt      = true
   }
