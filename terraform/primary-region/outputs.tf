@@ -9,3 +9,7 @@ output "db_instance_arn" {
 output "db_endpoint" {
   value = aws_db_instance.main.endpoint
 }
+
+output "alb_dns_name" {
+  value = aws_lb.main.dns_name
+}

@@ -12,3 +12,11 @@ output "private_subnet_ids" {
   description = "Private subnet IDs (for RDS replica later)"
   value       = [aws_subnet.private_a.id, aws_subnet.private_b.id]
 }
+
+output "replica_endpoint" {
+  value = aws_db_instance.replica.endpoint
+}
+
+output "replica_status" {
+  value = aws_db_instance.replica.status
+}
