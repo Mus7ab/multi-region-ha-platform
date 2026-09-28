@@ -3,13 +3,18 @@ output "alb_dns_name" {
   value       = aws_lb.main.dns_name
 }
 
+output "alb_zone_id" {
+  description = "Hosted zone ID of the secondary ALB (needed for Route 53 alias records)"
+  value       = aws_lb.main.zone_id
+}
+
 output "vpc_id" {
   description = "Secondary region VPC ID"
   value       = aws_vpc.main.id
 }
 
 output "private_subnet_ids" {
-  description = "Private subnet IDs (for RDS replica later)"
+  description = "Private subnet IDs"
   value       = [aws_subnet.private_a.id, aws_subnet.private_b.id]
 }
 

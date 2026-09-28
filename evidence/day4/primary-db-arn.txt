@@ -1,0 +1,1 @@
+arn:aws:rds:ap-south-2:342677169816:db:project7-primary-db

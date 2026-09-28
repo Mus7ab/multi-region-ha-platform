@@ -1,0 +1,27 @@
+T0 (primary ASG scaled to 0): 2026-09-28T06:27:15Z
+2026-09-28T06:27:17Z | health: Success: HTTP Status Code 200, OK. Resolved IP: 16.112.22.13 | dns: 40.192.124.101 16.112.22.13 | body: <h1>PRIMARY REGION - ip-10-2-2-242.ap-south-2.compute.intern
+2026-09-28T06:27:30Z | health: Success: HTTP Status Code 200, OK. Resolved IP: 16.112.22.13 | dns: 16.112.22.13 40.192.124.101 | body: <html>
+<head><title>503 Service Temporarily Unavailable</title></he
+<body>
+<center><h1>503 Service Temporarily Unavailable</h1></center
+</body>
+</html>
+2026-09-28T06:27:44Z | health: Success: HTTP Status Code 200, OK. Resolved IP: 16.112.22.13 | dns: 13.205.54.158 43.204.207.75 | body: <h1>SECONDARY REGION - ip-10-1-2-67.ap-south-1.compute.inter
+>>> T2 (traffic reaching secondary) observed at 2026-09-28T06:27:44Z
+2026-09-28T06:27:57Z | health: Success: HTTP Status Code 200, OK. Resolved IP: 16.112.22.13 | dns: 13.205.54.158 43.204.207.75 | body: <h1>SECONDARY REGION - ip-10-1-2-67.ap-south-1.compute.inter
+2026-09-28T06:28:10Z | health: Success: HTTP Status Code 200, OK. Resolved IP: 16.112.22.13 | dns: 43.204.207.75 13.205.54.158 | body: <h1>SECONDARY REGION - ip-10-1-2-67.ap-south-1.compute.inter
+2026-09-28T06:28:24Z | health: Success: HTTP Status Code 200, OK. Resolved IP: 16.112.22.13 | dns: 43.204.207.75 13.205.54.158 | body: <h1>SECONDARY REGION - ip-10-1-1-252.ap-south-1.compute.inte
+2026-09-28T06:28:39Z | health: Failure: HTTP Status Code 503, Service Temporarily Unavailable. Resolved IP: 40.192.124.101 | dns: 13.205.54.158 43.204.207.75 | body: <h1>SECONDARY REGION - ip-10-1-1-252.ap-south-1.compute.inte
+>>> T1 (health check unhealthy) observed at 2026-09-28T06:28:39Z
+----- RESULTS -----
+Detection time (T1 - T0): 91 seconds
+MEASURED RTO (T2 - T0): 32 seconds
+NOTE: Measures Route 53 detection + routing only, sampled every ~10-15s. Excludes public resolver/TTL caching (no registered domain to test).
+T0 (primary ASG scaled to 0): 2026-09-28T06:29:50Z
+2026-09-28T06:29:52Z | health: Failure: HTTP Status Code 503, Service Temporarily Unavailable. Resolved IP: 40.192.124.101 | dns: 43.204.207.75 13.205.54.158 | body: <h1>SECONDARY REGION - ip-10-1-1-252.ap-south-1.compute.inte
+>>> T1 (health check unhealthy) observed at 2026-09-28T06:29:52Z
+>>> T2 (traffic reaching secondary) observed at 2026-09-28T06:29:52Z
+----- RESULTS -----
+Detection time (T1 - T0): 5 seconds
+MEASURED RTO (T2 - T0): 5 seconds
+NOTE: Measures Route 53 detection + routing only, sampled every ~10-15s. Excludes public resolver/TTL caching (no registered domain to test).
