@@ -139,7 +139,7 @@ Full detail: [`docs/architecture-decisions.md`](docs/architecture-decisions.md).
 - A formal AWS Billing Console cost figure was not pulled for this project; cost was controlled operationally (see Teardown), not verified after the fact.
 - Multi-region EKS, Aurora Global Database, and centralized cross-region observability were explicitly out of scope from the start.
 
-## Cost Estimate
+## Cost Control
 
 Not verified in the AWS Billing Console. Cost was controlled operationally: infrastructure was provisioned only for active test sessions (without relying on a specific billing estimate), and fully destroyed at the end of every session.
 
