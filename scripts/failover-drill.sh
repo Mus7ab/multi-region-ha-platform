@@ -4,7 +4,7 @@ cd ~/project-7-multi-region-ha/terraform/route53
 NS="ns-1469.awsdns-55.org"
 FQDN="app.project7-drtest.com"
 HC_ID=$(terraform output -raw primary_health_check_id)
-LOG=~/project-7-multi-region-ha/evidence/day4/failover-timeline.txt
+LOG=~/project-7-multi-region-ha/evidence/failover-drill/failover-timeline.txt
 
 ts() { date -u +"%Y-%m-%dT%H:%M:%SZ"; }
 epoch() { date -u +%s; }
